@@ -1,0 +1,187 @@
+/* --- Global Styles: Dark Mode --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #1e1e1e; /* Dark background */
+    padding: 20px;
+    color: #e0e0e0; /* Light text */
+}
+
+h1 {
+    font-weight: 700;
+    color: #ffffff; /* White title */
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-weight: 500;
+    color: #f0f0f0;
+    border-bottom: 2px solid #444; /* Darker border */
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+/* --- New Toolbar Styles --- */
+.toolbar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #2a2a2a; /* Dark card background */
+    border: 1px solid #444;
+    padding: 12px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+.tool-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-right: 15px;
+    border-right: 1px solid #444;
+}
+
+.toolbar label {
+    font-weight: 500;
+    font-size: 14px;
+    color: #e0e0e0;
+}
+
+/* --- New Button Styles --- */
+.tool-btn {
+    background-color: #3e3e3e;
+    border: 1px solid #555;
+    border-radius: 8px;
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+    color: #e0e0e0; /* Light icon color */
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tool-btn:hover {
+    background-color: #4a4a4a;
+    border-color: #777;
+}
+
+.tool-btn:active,
+.tool-btn.active {
+    background-color: #007bff;
+    color: #ffffff;
+    border-color: #007bff;
+    transform: scale(0.98);
+}
+
+.danger-btn:hover {
+    background-color: #dc3545;
+    color: #fff;
+    border-color: #dc3545;
+}
+
+/* --- Input Styles --- */
+.toolbar input[type="color"] {
+    width: 36px;
+    height: 36px;
+    border: 1px solid #555;
+    padding: 0;
+    border-radius: 6px;
+    cursor: pointer;
+    overflow: hidden;
+}
+.toolbar input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+.toolbar input[type="color"]::-webkit-color-swatch {
+    border: none;
+}
+
+.toolbar input[type="range"] {
+    cursor: pointer;
+}
+
+/* --- Main Layout --- */
+.main-container {
+    display: flex;
+    gap: 20px;
+}
+
+/* --- Canvas Styles --- */
+#canvasContainer {
+    position: relative;
+    width: 800px;
+    height: 600px;
+    /* Removed shadow, adding a border */
+    border: 1px solid #444;
+    border-radius: 12px;
+    overflow: hidden; 
+}
+
+#canvasContainer canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#drawingCanvas {
+    /* CRITICAL: Canvas stays white */
+    background-color: #ffffff;
+    z-index: 1;
+}
+
+#cursorCanvas {
+    background-color: transparent;
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* --- New User List Styles --- */
+#userListContainer {
+    width: 250px;
+    background-color: #2a2a2a; /* Dark card background */
+    border: 1px solid #444;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    height: 600px;
+    overflow-y: auto;
+}
+
+.user-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #e0e0e0; /* Light text */
+    transition: background-color 0.2s;
+}
+
+.user-color-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 12px;
+    border: 1px solid rgba(255,255,255,0.1); /* Light border for dot */
+}
+
+.user-item:hover {
+    background-color: #3e3e3e;
+}
+
+.user-item.you { 
+    /* New dark-mode highlight */
+    background-color: #2c3a4f; 
+    color: #79b8ff;
+    font-weight: 700;
+}

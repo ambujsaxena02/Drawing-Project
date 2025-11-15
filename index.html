@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collaborative Drawing App</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Collaborative Canvas</h1>
+
+    <div class="toolbar">
+        <div class="tool-group">
+            <label for="colorPicker">Color:</label>
+            <input type="color" id="colorPicker" value="#000000">
+        </div>
+        
+        <div class="tool-group">
+            <label for="strokeWidth">Size:</label>
+            <input type="range" id="strokeWidth" min="1" max="50" value="5">
+        </div>
+        
+        <button id="brushBtn" class="tool-btn active" title="Brush">
+            <i class="fa-solid fa-paintbrush"></i>
+        </button>
+        <button id="eraserBtn" class="tool-btn" title="Eraser">
+            <i class="fa-solid fa-eraser"></i>
+        </button>
+        <button id="undoBtn" class="tool-btn" title="Undo">
+            <i class="fa-solid fa-arrow-rotate-left"></i>
+        </button>
+        <button id="redoBtn" class="tool-btn" title="Redo">
+            <i class="fa-solid fa-arrow-rotate-right"></i>
+        </button>
+        <button id="clearBtn" class="tool-btn danger-btn" title="Clear All">
+            <i class="fa-solid fa-trash-can"></i>
+        </button>
+    </div>
+
+    <div class="main-container">
+        <div id="canvasContainer">
+            <canvas id="drawingCanvas"></canvas>
+            <canvas id="cursorCanvas"></canvas>
+        </div>
+        
+        <div id="userListContainer">
+            <h3>Users Online</h3>
+            <div id="userList"></div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
