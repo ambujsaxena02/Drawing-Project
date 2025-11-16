@@ -6,7 +6,7 @@ window.addEventListener('load', () => {
         return;
     }
     
-    const socket = io('http://localhost:3000');
+    const socket = io('https://drawing-project-kzm2.onrender.com');
 
     // --- Canvas Setup ---
     const canvas = document.getElementById('drawingCanvas');
