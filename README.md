@@ -33,4 +33,6 @@ Navigate to the `server` folder (or your project's root) where `package.json` is
 
 ```bash
 npm install
+```
+
 ### 2. Deployment link : https://drawing-project-1-a7n9.onrender.com
